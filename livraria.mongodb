@@ -1,0 +1,143 @@
+use("LivrariaOnline")
+
+original_id = ObjectId();
+db.Autor.insertOne({
+    "_id": original_id,
+    "Nome": "Gustavo Marcos dos Santos",
+    "Data_Nascimento": "11/02/1957",
+    "Email": "gustavo.marcos@gmail.com",
+    "Telefone": "(13)998477879"
+})
+
+
+
+db.Livros.insertOne({
+    "_id": ObjectId(),
+    "creator": {
+        "$ref": "Autor",
+        "$ObjectId":original_id,
+        "$db": "LivrariaOnline"
+    },  
+    "Título":"Harry Potter 1",
+    "Páginas": 600,
+    "Gênero": "Ficção",
+    "Preço":80.00,
+})
+
+use("LivrariaOnline")
+
+// Inserção 1
+original_id1 = ObjectId();
+db.Autor.insertOne({
+    "_id": original_id1,
+    "Nome": "Gustavo Marcos dos Santos",
+    "Data_Nascimento": "11/02/1957",
+    "Email": "gustavo.marcos@gmail.com",
+    "Telefone": "(13)998477879"
+})
+
+db.Livros.insertOne({
+    "_id": ObjectId(),
+    "creator": {
+        "$ref": "Autor",
+        "$ObjectId": original_id1,
+        "$db": "LivrariaOnline"
+    },  
+    "Título":"Harry Potter 1",
+    "Páginas": 600,
+    "Gênero": "Ficção",
+    "Preço":80.00,
+})
+
+// Inserção 2
+original_id2 = ObjectId();
+db.Autor.insertOne({
+    "_id": original_id2,
+    "Nome": "Maria Silva",
+    "Data_Nascimento": "15/07/1975",
+    "Email": "maria.silva@gmail.com",
+    "Telefone": "(11)988886677"
+})
+
+db.Livros.insertOne({
+    "_id": ObjectId(),
+    "creator": {
+        "$ref": "Autor",
+        "$ObjectId": original_id2,
+        "$db": "LivrariaOnline"
+    },  
+    "Título":"Dom Quixote",
+    "Páginas": 400,
+    "Gênero": "Romance",
+    "Preço":65.00,
+})
+
+// Inserção 3
+original_id3 = ObjectId();
+db.Autor.insertOne({
+    "_id": original_id3,
+    "Nome": "João Oliveira",
+    "Data_Nascimento": "03/04/1980",
+    "Email": "joao.oliveira@gmail.com",
+    "Telefone": "(21)987654321"
+})
+
+db.Livros.insertOne({
+    "_id": ObjectId(),
+    "creator": {
+        "$ref": "Autor",
+        "$ObjectId": original_id3,
+        "$db": "LivrariaOnline"
+    },  
+    "Título":"O Senhor dos Anéis",
+    "Páginas": 800,
+    "Gênero": "Fantasia",
+    "Preço":90.00,
+})
+
+// Inserção 4
+original_id4 = ObjectId();
+db.Autor.insertOne({
+    "_id": original_id4,
+    "Nome": "Ana Souza",
+    "Data_Nascimento": "25/11/1992",
+    "Email": "ana.souza@gmail.com",
+    "Telefone": "(31)987651234"
+})
+
+db.Livros.insertOne({
+    "_id": ObjectId(),
+    "creator": {
+        "$ref": "Autor",
+        "$ObjectId": original_id4,
+        "$db": "LivrariaOnline"
+    },  
+    "Título":"Crime e Castigo",
+    "Páginas": 550,
+    "Gênero": "Ficção Policial",
+    "Preço":75.00,
+})
+
+// Inserção 5
+original_id5 = ObjectId();
+db.Autor.insertOne({
+    "_id": original_id5,
+    "Nome": "Pedro Santos",
+    "Data_Nascimento": "10/09/1985",
+    "Email": "pedro.santos@gmail.com",
+    "Telefone": "(41)9988776655"
+})
+
+db.Livros.insertOne({
+    "_id": ObjectId(),
+    "creator": {
+        "$ref": "Autor",
+        "$ObjectId": original_id5,
+        "$db": "LivrariaOnline"
+    },  
+    "Título":"A Metamorfose",
+    "Páginas": 200,
+    "Gênero": "Ficção",
+    "Preço":40.00,
+})
+
